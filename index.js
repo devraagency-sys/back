@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -5,7 +7,7 @@ const { PrismaClient } = require('./generated/prisma'); // Шлях має зб�
 
 
 const prisma = new PrismaClient();
-const port = 3002;
+const port = process.env.PORT || 3002;
 
 app.use(express.json());
 app.use(cors());
