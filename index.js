@@ -41,6 +41,26 @@ app.get('/form', async (req, res) => {
   return 'hello'
 });
 
+app.get('/reviews', async (req, res) => {
+  try {
+    const reviews = await prisma.review.findMany({ orderBy: { createdAt: 'desc' } });
+    res.json(reviews);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Помилка сервера' });
+  }
+});
+
+app.get('/partners', async (req, res) => {
+  try {
+    const partners = await prisma.partners.findMany();
+    res.json(partners);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Помилка сервера' });
+  }
+});
+
 app.listen(port, () => {
   console.log(`🚀 Сервер запущено на порту ${port}`);
 });
