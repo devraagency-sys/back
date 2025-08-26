@@ -25,15 +25,22 @@ model Form {
 }
 
 model Review {
-  id          Int      @id @default(autoincrement())
-  projectLogo String // url лого проекта
-  projectName String
-  authorName  String
-  authorRole  String
-  text        String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id            Int      @id @default(autoincrement())
+  projectLogo   String
+  projectName_ua String
+  projectName_ru String
+  projectName_en String
+  authorName     String
+  authorRole_ua  String
+  authorRole_ru  String
+  authorRole_en  String
+  text_ua        String
+  text_ru        String
+  text_en        String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }
+
 
 model Partners {
   id   Int    @id @default(autoincrement())
@@ -42,11 +49,21 @@ model Partners {
 }
 
 model Case {
-  id       Int     @id @default(autoincrement())
-  title    String
-  budget   String
-  users    String
-  geo      String
-  cpi      String
-  img      String
+  id        Int    @id @default(autoincrement())
+  title_ua  String
+  title_ru  String
+  title_en  String
+  budget_ua String
+  budget_ru String
+  budget_en String
+  users_ua  String
+  users_ru  String
+  users_en  String
+  geo_ua    String
+  geo_ru    String
+  geo_en    String
+  cpi_ua    String
+  cpi_ru    String
+  cpi_en    String
+  img       String
 }

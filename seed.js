@@ -6,31 +6,26 @@ async function main() {
   await prisma.case.createMany({
     data: [
       {
-        title: "Boinkers",
-        budget: "Бюджет: 50,000$",
-        users: "Нові користувачі: 571,722",
-        geo: "ГЕО: Всі країни",
-        cpi: "CPI: $0.087",
+        title_ua: "Boinkers",
+        title_ru: "Boinkers",
+        title_en: "Boinkers",
+        budget_ua: "Бюджет: 50,000$",
+        budget_ru: "Бюджет: 50,000$",
+        budget_en: "Budget: $50,000",
+        users_ua: "Нові користувачі: 571,722",
+        users_ru: "Новые пользователи: 571,722",
+        users_en: "New users: 571,722",
+        geo_ua: "ГЕО: Всі країни",
+        geo_ru: "ГЕО: Все страны",
+        geo_en: "GEO: All countries",
+        cpi_ua: "CPI: $0.087",
+        cpi_ru: "CPI: $0.087",
+        cpi_en: "CPI: $0.087",
         img: "/photo_2025-07-28_22-58-58.jpg",
-      },
-      {
-        title: "Uni Jump",
-        budget: "Бюджет: 30,000$",
-        users: "Нові користувачі: 227,812",
-        geo: "ГЕО: Країни СНД",
-        cpi: "CPI: $0.13",
-        img: "/photo_2025-07-28_22-58-59.jpg",
-      },
-      {
-        title: "PokerGram",
-        budget: "Бюджет: 20,000$",
-        users: "Нові користувачі: 180,000",
-        geo: "ГЕО: Змішані регіони",
-        cpi: "CPI: $0.11",
-        img: "/photo_2025-07-28_22-59-00.jpg",
       },
     ],
   });
+  
 
   console.log("✅ Кейси додані");
 }
