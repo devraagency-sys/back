@@ -72,6 +72,15 @@ app.get('/cases', async (req, res) => {
     res.status(500).json({ error: 'Помилка сервера' });
   }
 });
+app.get('/team', async (req, res) => {
+  try {
+    const team = await prisma.teamMember.findMany({ orderBy: { id: 'asc' } });
+    res.json(team);
+  } catch (error) {
+    console.error("❌ Помилка при отриманні команди:", error);
+    res.status(500).json({ error: 'Помилка сервера' });
+  }
+});
 
 
 app.listen(port, () => {

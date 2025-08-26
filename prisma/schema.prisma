@@ -24,6 +24,7 @@ model Form {
   createdAt DateTime @default(now())
 }
 
+
 model Review {
   id            Int      @id @default(autoincrement())
   projectLogo   String
@@ -66,4 +67,10 @@ model Case {
   cpi_ru    String
   cpi_en    String
   img       String
+}
+
+model TeamMember {
+  id     Int    @id @default(autoincrement())
+  name   String
+  avatar String
 }
