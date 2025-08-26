@@ -61,6 +61,19 @@ app.get('/partners', async (req, res) => {
   }
 });
 
+app.get('/cases', async (req, res) => {
+  try {
+    const cases = await prisma.case.findMany({
+      orderBy: { id: 'asc' },
+    });
+    res.json(cases);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Помилка сервера' });
+  }
+});
+
+
 app.listen(port, () => {
   console.log(`🚀 Сервер запущено на порту ${port}`);
 });

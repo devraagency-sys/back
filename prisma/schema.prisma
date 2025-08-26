@@ -40,3 +40,13 @@ model Partners {
   logo String
   link String
 }
+
+model Case {
+  id       Int     @id @default(autoincrement())
+  title    String
+  budget   String
+  users    String
+  geo      String
+  cpi      String
+  img      String
+}
