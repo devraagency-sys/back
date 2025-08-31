@@ -49,6 +49,12 @@ model Partners {
   link String
 }
 
+model Media {
+  id   Int    @id @default(autoincrement())
+  logo String
+  link String
+}
+
 model Case {
   id        Int    @id @default(autoincrement())
   title_ua  String

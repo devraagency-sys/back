@@ -60,6 +60,15 @@ app.get('/partners', async (req, res) => {
     res.status(500).json({ error: 'Помилка сервера' });
   }
 });
+app.get('/media', async (req, res) => {
+  try {
+    const media = await prisma.media.findMany();
+    res.json(media);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Помилка сервера' });
+  }
+});
 
 app.get('/cases', async (req, res) => {
   try {
